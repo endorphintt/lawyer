@@ -1,0 +1,103 @@
+.header {
+    z-index: 100;
+    position: fixed;
+    height: 80px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    &__lans,
+    &__img {
+        width: 120px;
+        padding: 10px;
+    }
+    &__links {
+        flex-grow: 1;
+        max-width: 700px;
+        border-bottom: 1px solid #132b47;
+        display: flex;
+        justify-content: space-around;
+        color: #132b47;
+    }
+    &__link {
+        background-color: transparent;
+        position: relative;
+        color: #132b47;
+        padding: 5px;
+        text-transform: uppercase;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: rgb(34, 61, 158);
+            transition: width 0.3s ease;
+        }
+        &:hover {
+            color: rgb(34, 61, 158);
+            &:after {
+                width: 100%;
+            }
+        }
+    }
+    &__icon {
+        width: 30px;
+        height: 12px;
+        background-color: transparent;
+        position: relative;
+        cursor: pointer;
+        &::after,
+        &::before {
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background-color: #132b47;
+            content: '';
+            right: 0;
+        }
+        &::after {
+            top: 0;
+        }
+        &::before {
+            bottom: 0;
+            width: 20px;
+        }
+    }
+    &__lans {
+        color: white;
+    }
+    &__lan {
+        padding: 1px;
+        border-radius: 3px;
+        color: #132b47;
+        font-family: 'inter';
+        font-weight: 200;
+        & span {
+            border-radius: 5px;
+            padding: 1px;
+        }
+    }
+}
+
+@media (max-width: 776px) {
+    .header {
+        &__links {
+            display: none;
+        }
+    }
+}
+
+@media (min-width: 676px) {
+    .header {
+        &__icon {
+            display: none;
+        }
+    }
+}

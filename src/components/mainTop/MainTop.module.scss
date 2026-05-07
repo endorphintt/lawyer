@@ -1,0 +1,145 @@
+@keyframes arrowAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.top {
+    height: 100vh;
+    width: 100%;
+    background: url('./mainTop.png') center center/ auto 100% no-repeat,
+        linear-gradient(to bottom, #bcbfc1 0%, #c3c6cb 50%, #d6d8da 100%);
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    &__text {
+        font-size: 20vw;
+        letter-spacing: 1.2vw;
+        text-align: center;
+        white-space: nowrap;
+        margin-bottom: -1.5vw;
+        background: linear-gradient(
+            to bottom,
+            rgba(19, 43, 71, 1) 0%,
+            rgba(0, 0, 0, 0) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+    }
+    &__scroll {
+        cursor: pointer;
+        width: 150px;
+        position: absolute;
+        left: 5vw;
+        top: 30%;
+        font-size: 16px;
+        color: #132b47;
+        & p {
+            margin-top: 20px;
+            line-height: 20px;
+            transition: 0.5s;
+        }
+        transition: 0.5s;
+        &:hover {
+            & p {
+                text-shadow: 4px 4px 29px rgba(255, 255, 255, 1);
+            }
+        }
+    }
+    &__arrow {
+        position: relative;
+        width: 2px;
+        height: 53px;
+        background-color: #132b47;
+        margin: 10px;
+        &::after,
+        &::before {
+            width: 13px;
+            height: 2px;
+            background-color: #132b47;
+            content: '';
+            position: absolute;
+            bottom: 2px;
+        }
+        &::after {
+            transform: rotate(40deg);
+            left: -10px;
+        }
+        &::before {
+            transform: rotate(-40deg);
+            left: -1px;
+        }
+        animation: arrowAnimation 2s ease infinite;
+    }
+}
+
+@media (max-width: 676px) {
+    .top {
+        background: url('./mainTop.png') center center/ auto 100% no-repeat;
+        &__text {
+            font-size: 20vw;
+            letter-spacing: 1.2vw;
+            text-align: center;
+            white-space: nowrap;
+            margin-bottom: -1.5vw;
+            margin-bottom: 100px;
+        }
+    }
+}
+
+@media (min-width: 1000px) {
+    .top {
+        background: url('./mainTop.png') center center/ auto 140% no-repeat;
+    }
+}
+
+//slider
+
+.slider {
+    background-color: rgba(126, 138, 153, 0.59);
+    position: absolute;
+    right: 20px;
+    top: calc(50% - 197.5px);
+    width: 243px;
+    height: 195px;
+    padding: 20px;
+    border-radius: 20px;
+    &__header {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    &__dot {
+        width: 30px;
+        height: 3px;
+        background-color: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+
+        &.active {
+            background-color: white;
+        }
+    }
+    &__text {
+        font-size: 20px;
+        color: #132b47;
+        line-height: 24px;
+    }
+}
+
+@media (max-width: 850px) {
+    .slider {
+        display: none;
+    }
+    .top {
+        &__scroll {
+            display: none;
+        }
+    }
+}

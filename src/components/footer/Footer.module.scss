@@ -1,0 +1,109 @@
+.footer {
+    max-width: 800px;
+    margin: 0 auto;
+    &__container {
+        background-color: #132b47;
+    }
+    &__top {
+        display: flex;
+        padding: 50px;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__locs {
+        max-width: 560px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__loc {
+        width: 250px;
+        height: 100px;
+        border: 1px dotted white;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        transition: 0.5s;
+        &:hover {
+            color: #132b47;
+            background-color: rgba(255, 255, 255, 0.667);
+        }
+    }
+    &__city {
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 20px;
+        padding: 3px 0 10px 0px;
+        margin-bottom: 20px;
+        position: relative;
+        &::after {
+            position: absolute;
+            content: '';
+            width: 30px;
+            height: 1px;
+            background-color: white;
+            bottom: -5px;
+            left: calc(50% - 15px);
+        }
+    }
+    &__number {
+        font-size: 18px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    &__bottom {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        padding-bottom: 50px;
+    }
+    &__link {
+        background-color: transparent;
+        font-size: 22px;
+        min-width: 100px;
+        color: rgba(255, 255, 255, 0.611);
+        margin: 20px;
+    }
+}
+
+@media (max-width: 720px) {
+    .footer {
+        &__top {
+            flex-direction: column;
+        }
+        & img {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    .footer {
+        &__locs {
+            flex-direction: column;
+            justify-content: center;
+            flex-wrap: nowrap;
+        }
+        &__link {
+            font-size: 18px;
+            margin: 5px;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .footer {
+        &__bottom {
+            flex-wrap: wrap;
+        }
+        &__link {
+            font-size: 18px;
+            margin: 5px;
+        }
+    }
+}

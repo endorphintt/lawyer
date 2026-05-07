@@ -1,0 +1,39 @@
+.blog {
+    overflow-x: hidden;
+    &__items {
+        max-width: 1000px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+    }
+    &__item {
+        margin: 10px;
+        position: relative;
+        width: 30%;
+        height: 250px;
+        & p {
+            position: absolute;
+            width: 100%;
+            height: 100px;
+            background-color: rgba(30, 66, 108, 0.711);
+            top: calc(50% - 50px);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 18px;
+            line-height: 20px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .blog {
+        &__item {
+            width: 100%;
+        }
+    }
+}

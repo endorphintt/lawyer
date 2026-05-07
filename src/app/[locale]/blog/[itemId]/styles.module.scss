@@ -1,0 +1,43 @@
+.blog {
+    overflow-x: hidden;
+    width: 100%;
+    &__item {
+        padding: 10px;
+        max-width: 1000px;
+        margin: 0 auto;
+        & p {
+            font-size: 18px;
+        }
+    }
+    &__img {
+        margin: 0 auto;
+        position: relative;
+        width: 600px;
+        height: 400px;
+    }
+
+    &__title {
+        text-align: center;
+        margin: 50px 5px;
+        text-transform: uppercase;
+        font-size: 20px;
+        padding-bottom: 30px;
+        position: relative;
+        &::after {
+            width: 80px;
+            height: 3px;
+            color: #132b47;
+            background-color: #132b47;
+            position: absolute;
+            content: '';
+            bottom: 0;
+            left: calc(50% - 40px);
+        }
+    }
+}
+
+@media (max-width: 620px) {
+    .blog__img {
+        width: 100%;
+    }
+}

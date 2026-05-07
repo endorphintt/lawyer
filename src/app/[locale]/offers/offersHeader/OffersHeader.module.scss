@@ -1,0 +1,30 @@
+.header {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    &__button {
+        padding: 3px;
+        border: 1px solid #3977be81;
+        height: 50px;
+        width: 19%;
+        margin: 0.5%;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 767px) {
+    .header {
+        padding: 0;
+        width: 100%;
+        justify-content: space-around;
+        &__button {
+            padding: 0;
+            margin: 3px 0;
+            height: 50px;
+            width: 33%;
+            font-size: 11px;
+        }
+    }
+}
